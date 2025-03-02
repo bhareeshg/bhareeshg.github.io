@@ -1,48 +1,107 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html><head>
-<meta http-equiv="content-type" content="text/html; charset=windows-1252">
-<title> Home Page for Hareesh Gautham Bhaskar </title> 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="google-site-verification" content="tm5Y6ZNTf-lBqbwniGjQPv1q02o2TuUQZ9GTYa4SMLg" />
+  <title>Hareesh Gautham Bhaskar</title>
+  <meta name="description"
+    content="A minimal, almost class-less CSS library to write modern websites that look like LaTeX documents." />
+  <meta name="keywords" content="latex.css,css library,class-less css,latex css" />
+  <meta property="og:title" content="LaTeX.css" />
+  <meta property="og:url" content="https://latex.vercel.app" />
+  <meta property="og:description"
+    content="A minimal, almost class-less CSS library to write modern websites that look like LaTeX documents." />
+  <meta property="og:type" content="website" />
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="prism/prism.css" />
+  <style>
+    .vertical {
+      border-left: 6px solid black;
+      height: 120px;
+      position:absolute;
+      left: 50%;
+      zoom: 200%
+    }
+   </style>
+
 </head>
 
-<body>
-<hr> 
-<h1>
-<div style="float: right;"><img style="width: 150px; height: auto; border: 5px solid #555; " src="photo.jpg"></div>
-<u style="color:blue;"><strong style="color:blue;">Hareesh Gautham Bhaskar</strong> </u> <br>
-</h1>
-<b style="font-size:1.7vw">Graduate Student</b> <br class="__fx-devtools-hide-shortcut__">
-<b style="font-size:1.7vw">Georgia Institute of Technology</b> <br> <br>
-<b style="font-size:1.5vw"> <u>Research Interests</u>: Planetary dynamics; compact object dynamics; gravitational wave progenitors; exoplanets; solar system; astrophysics theory and computation.</b>
+<body id="top">
+  <header>
+    <h1><span class="latex">Hareesh Gautham Bhaskar</h1>
+  </header>
 
+  <table align=center>
+  <thead>
+  <tr>
+  <th> <a href="https://docs.google.com/document/u/0/d/e/2PACX-1vQXwnDQ2vYUePVmf1HRLh0U_6NLsycvW3f5h95h6Hj4TAEbJFPpYfJfdRse4F_5_KhEItm9rM2GB6h4/pub?pli=1">CV</a>  </th>
+  <th> <a href="">Research</a>  </th>
+  <th> <a href="https://arxiv.org/search/?query=Hareesh+Gautham+Bhaskar&searchtype=all&source=header">Publications</a>  </th>
+  </tr>
+  </thead>
+  </table>
+  
+  <br>
 
-<h2 style="color:blue;"> Contact Information:</h2>
-<ul>
-<li> <strong> Postal Address </strong>:  School of Physics, 
-Georgia Institute of Technology, Atlanta GA 30332 
+  <table align=center>
+  <thead>
+  <tr>
+  <th><img style="border: 2px solid #555" src="photo.jpg" alt="Image alt text" width="200" height="200">  
+  </th>
+  <th>
+  Department of Astronomy <br>
+  727 East 3rd Street <br>
+  Swain West 318 <br>
+  Indiana University <br>
+  Bloomington, IN 47405 <br><br>
+  Email: <a href= "mailto:name@email.com">bhareeshg@gmail.com</a> <br>
+  Webpage: <a href="https://bhareeshg.github.io">https://bhareeshg.github.io/</a> <br>
+  </th>
+  </tr>
+  </thead>
+  </table>
 
-</li><li> <strong> Email </strong>: <a href="mailto:hbhaskar3@gatech.edu">hbhaskar3@gatech.edu</a>
-
-</li></ul> 
-<hr>
+  <div class="abstract">
+    <h2>ABOUT ME</h2>
+    <p>
+      I am currently a post-doctoral fellow at Indiana University, Bloomington. My research is centered on the dynamics of N-body systems with applications to the formation, evolution, and habitability of planetary systems. I collaborate with both observers and theoreticians to better understand the peculiar new worlds that are being discovered. I also study the dynamics of compact systems which are potential sources of gravitational wave mergers. Previously I was a post-doctoral fellow at Technion-Israel Institute of Technology, Haifa. I got my doctorate in physics from Georgia Institute of Technology in 2023. Before that I got my undergraduate degrees in physics and computer science from BITS-Pilani.
+    </p>
+  </div>
  
-<h2 style="color:blue;"> Other Information: </h2>
-<h3>
-<ul>
-<li> <a href="https://docs.google.com/document/d/1G8kpbk9qJ6JdP7Jz4Mv7t83NAE5Q2jljjvHCkBhhkus/edit?usp=sharing">Research</a>
-</li><li> <a href="https://docs.google.com/document/d/e/2PACX-1vQXwnDQ2vYUePVmf1HRLh0U_6NLsycvW3f5h95h6Hj4TAEbJFPpYfJfdRse4F_5_KhEItm9rM2GB6h4/pub">Curriculum Vitae</a>
-<!--<li> <a HREF ="Report.html">Website Statistics</a>-->
-</li><li> <a href="https://github.com/bhareeshg/">Code</a>
-<!--<li> <a HREF ="Report.html">Website Statistics</a>-->
-</li></ul> 
-</h3>
-<br>
-<hr>
-    
+  <hr>
+ <div class="abstract">
+    <h2>RESEARCH INTERESTS</h2>
+    <p>
+    Planetary dynamics; Compact object dynamics; Solar system objects; Exoplanets; Three body dynamics;
+    </p>
+  </div>
 
 
 
+<script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'],],
+      },
+    }
+    const typeFaceToggle = document.getElementById('typeface-toggle')
+    const typeface = document.getElementById('typeface')
+    typeFaceToggle.addEventListener('click', () => {
+      document.body.classList.toggle('libertinus')
+      typeface.textContent = document.body.classList.contains('libertinus') ? 'Libertinus' : 'Latin Modern'
+    })
 
- 
+    const darkModeToggle = document.getElementById('dark-mode-toggle')
+    darkModeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('latex-dark')
+    })
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script async src="prism/prism.js"></script>
 
+</body>
 
-</body></html>
+</html>
