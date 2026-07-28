@@ -1,0 +1,279 @@
+/*
+  Minimal, dependency-free stylesheet.
+  Reproduces the "LaTeX article" look using the self-hosted
+  Latin Modern font (the standard LaTeX typeface).
+  No build step, no CDN, no JavaScript required.
+*/
+
+@font-face {
+  font-family: 'Latin Modern';
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+  src: url('fonts/LM-regular.woff2') format('woff2'),
+    url('fonts/LM-regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Latin Modern';
+  font-style: italic;
+  font-weight: normal;
+  font-display: swap;
+  src: url('fonts/LM-italic.woff2') format('woff2'),
+    url('fonts/LM-italic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Latin Modern';
+  font-style: normal;
+  font-weight: bold;
+  font-display: swap;
+  src: url('fonts/LM-bold.woff2') format('woff2'),
+    url('fonts/LM-bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Latin Modern';
+  font-style: italic;
+  font-weight: bold;
+  font-display: swap;
+  src: url('fonts/LM-bold-italic.woff2') format('woff2'),
+    url('fonts/LM-bold-italic.ttf') format('truetype');
+}
+
+:root {
+  --rule-thick: 1.6px;
+  --rule-thin: 0.9px;
+  --rule-color: hsl(0, 0%, 12%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 1rem;
+}
+
+body {
+  font-family: 'Latin Modern', 'Computer Modern Serif', Georgia, Cambria, 'Times New Roman', Times, serif;
+  font-size: 1.05rem;
+  line-height: 1.5;
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 3rem;
+  color: hsl(0, 0%, 8%);
+  background-color: hsl(210, 20%, 98%);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  hyphens: auto;
+}
+
+h1, h2, p, table {
+  margin: 0;
+}
+
+/* Title */
+header {
+  text-align: center;
+  margin-bottom: 0;
+}
+
+header h1 {
+  font-size: 2.1rem;
+  line-height: 1.25;
+  font-weight: bold;
+  letter-spacing: 0.01em;
+}
+
+header h1 a,
+header h1 a:visited {
+  color: inherit;
+  text-decoration: none;
+}
+
+header h1 a:hover {
+  color: hsl(0, 100%, 33%);
+}
+
+p {
+  text-align: justify;
+  margin-top: 0.9rem;
+}
+
+a,
+a:visited {
+  color: hsl(0, 100%, 33%);
+  text-decoration-skip-ink: auto;
+}
+
+a:focus {
+  outline: 2px solid hsl(220, 90%, 52%);
+  outline-offset: 2px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Thin section-divider rule, like \hrule between parts of the page */
+hr {
+  border: none;
+  border-top: var(--rule-thin) solid hsl(0, 0%, 45%);
+  margin: 1.75rem 0;
+}
+
+/* Tables: collapse to single lines, no cell padding oddities */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Booktabs-style rule above/below the nav row: \toprule ... \bottomrule */
+nav.nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.75rem;
+  margin: 1.4rem auto 0;
+  padding: 0.55rem 0;
+  border-top: var(--rule-thick) solid var(--rule-color);
+  border-bottom: var(--rule-thick) solid var(--rule-color);
+}
+
+nav.nav a {
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+/* Booktabs-style rule above/below the photo + address block */
+table.info {
+  margin: 1.4rem auto 0;
+  border-top: var(--rule-thick) solid var(--rule-color);
+  border-bottom: var(--rule-thick) solid var(--rule-color);
+}
+
+table.info th {
+  font-weight: normal;
+  text-align: left;
+  vertical-align: top;
+  line-height: 1.45;
+  padding: 1rem 1rem;
+}
+
+table.info th.address {
+  font-weight: bold;
+}
+
+table.info th:first-child {
+  padding-left: 0;
+  width: 216px;
+}
+
+table.info th:last-child {
+  padding-right: 0;
+}
+
+/* Centered section title + body, like a LaTeX abstract block */
+.abstract {
+  text-align: center;
+  margin: 1.9rem 0 0;
+}
+
+.abstract > h2 {
+  font-size: 1rem;
+  font-weight: normal;
+  font-variant-caps: small-caps;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.abstract p {
+  text-align: center;
+  margin-top: 0;
+}
+
+/* Topic links row on the Research hub page, styled like the main nav */
+nav.topics {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.75rem;
+  margin: 1.4rem auto 0;
+  padding: 0.55rem 0;
+  border-top: var(--rule-thick) solid var(--rule-color);
+  border-bottom: var(--rule-thick) solid var(--rule-color);
+}
+
+nav.topics a {
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+/* Back-to-research link */
+p.back-link {
+  text-align: center;
+  margin-top: 1.9rem;
+  font-style: italic;
+}
+
+/* Publication list */
+.pub-list {
+  margin-top: 1.9rem;
+}
+
+.pub-entry {
+  margin-top: 1.9rem;
+  padding-top: 1.4rem;
+  border-top: var(--rule-thin) solid hsl(0, 0%, 65%);
+}
+
+.pub-entry:first-child {
+  margin-top: 1.4rem;
+  padding-top: 0;
+  border-top: none;
+}
+
+.pub-title {
+  font-weight: bold;
+  font-style: italic;
+  margin: 0;
+}
+
+.pub-meta {
+  font-size: 0.92rem;
+  color: hsl(0, 0%, 30%);
+  margin-top: 0.3rem;
+}
+
+.pub-abstract {
+  text-align: justify;
+  margin-top: 0.6rem;
+}
+
+.pub-link {
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+}
+
+/* Simple citation-only list for "Other Papers" */
+.other-papers {
+  margin-top: 1.4rem;
+  padding-left: 1.2rem;
+}
+
+.other-papers li {
+  margin-top: 0.7rem;
+  text-align: left;
+  line-height: 1.45;
+}
+
+@media print {
+  body {
+    background-color: transparent;
+  }
+}
